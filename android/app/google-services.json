@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268392220143",
+    "project_id": "chatapp-f76f3",
+    "storage_bucket": "chatapp-f76f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268392220143:android:d6d5623d69bb8f1991a21a",
+        "android_client_info": {
+          "package_name": "com.example.zync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAa1SIPbBJHrATPJKVuLrTAC_2TkVqe-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
