@@ -32,9 +32,6 @@ class FirestoreService {
       QuerySnapshot b,
     ) {
       final allDocs = [...a.docs, ...b.docs];
-      allDocs.sort(
-        (a, b) => (a['time'] as Timestamp).compareTo(b['time'] as Timestamp),
-      );
       return allDocs;
     });
   }
