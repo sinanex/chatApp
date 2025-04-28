@@ -181,17 +181,9 @@ class RegisterPage extends StatelessWidget {
                   width: double.infinity,
                   height: 55,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        authController.registerUser().then((value) {
-                          if (value != null) {
-                            log(value);
-                            Get.offAll(() => HomeScreen());
-                            Get.snackbar('login', 'login sucess');
-                          } else {
-                            Get.snackbar('login', 'login error');
-                          }
-                        });
+                        await authController.registerUser();
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -214,7 +206,6 @@ class RegisterPage extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                // Already have an account
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

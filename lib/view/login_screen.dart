@@ -1,11 +1,8 @@
 import 'dart:developer';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:zync/controller/auth_controller.dart';
-import 'package:zync/view/home_screen.dart';
 import 'package:zync/view/register_screen.dart';
 
 // ignore: must_be_immutable
@@ -70,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       // Email field
                       TextFormField(
-                        controller: authController.nameController,
+                        controller: authController.usernameController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: 'Email',
@@ -169,22 +166,7 @@ class LoginScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        try {
-                          authController.loginUser();
-
-                          if (FirebaseAuth.instance.currentUser != null) {
-                            Get.offAll(() => HomeScreen());
-                            Get.snackbar('login', 'login sucess');
-                          } else {
-                            Get.snackbar(
-                              'login irrror',
-                              'somthing went wrong',
-                              snackPosition: SnackPosition.BOTTOM,
-                            );
-                          }
-                        } catch (e) {
-                          log(e.toString());
-                        }
+                        authController.loginUser();
                       }
                     },
                     style: ElevatedButton.styleFrom(

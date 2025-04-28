@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,8 +37,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
+            log('user get $user');
       Get.offAll(() => HomeScreen());
     } else {
+      log('user null $user');
       Get.offAll(() => LoginScreen());
     }
   }

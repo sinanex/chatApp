@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zync/controller/chat_controller.dart';
 import 'package:zync/view/chat_screen.dart';
-import 'package:zync/view/login_screen.dart';
+import 'package:zync/view/profile.dart';
 
 class HomeScreen extends StatelessWidget {
   final UserController controller = Get.put(UserController());
@@ -26,10 +26,9 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout, color: Color(0xFF1E2022), size: 28),
+            icon: const Icon(Icons.person, color: Color(0xFF1E2022), size: 28),
             onPressed: () {
-              FirebaseAuth.instance.signOut();
-              Get.offAll(() => LoginScreen());
+              Get.to(() => ProfileScreen());
             },
           ),
         ],

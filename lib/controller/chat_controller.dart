@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:zync/model/messages.dart';
 import 'package:zync/model/model.dart';
 import 'package:zync/services/firestore_services.dart';
 
